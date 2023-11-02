@@ -20,9 +20,12 @@ public class PnlForceField extends JPanel implements MouseMotionListener {
         int w = getWidth();
         int h = getHeight();
 
-        angle = Math.atan2(mousePosition.y-h/2, mousePosition.x-w/2);
-
-        fillArrow(g2, w/2, h/2, 100, angle);
+        for (int x = 25; x <= w; x+=25) {
+            for (int y = 25; y < h; y+=25) {
+                angle = Math.atan2(mousePosition.y-y, mousePosition.x-x);
+                fillArrow(g2, x, y, 20, angle);
+            }
+        }
 
     }
 
